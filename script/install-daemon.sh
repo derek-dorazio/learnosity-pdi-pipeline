@@ -1,0 +1,2 @@
+cp com.cainc.derek.learnosity-pipeline.plist /Users/ddorazio/Library/LaunchDaemons/com.cainc.derek.learnosity-pipeline.plist
+launchctl load -w /Users/ddorazio/Library/LaunchDaemons/com.cainc.derek.learnosity-pipeline.plist

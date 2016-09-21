@@ -1,0 +1,1 @@
+/Users/ddorazio/dev/tools/data-integration/pan.sh -file=/Users/ddorazio/dev/projects/derek-learnosity-pipeline/pdi/learnosity-monthly-payment.ktr -param:school-year-start-date="2016-07-01" -param:day-offset="-1" -param:schema-name="production_skynet" -level=Detailed -log=/Users/ddorazio/dev/projects/derek-learnosity-pipeline/log/learnosity-pdi.log
