@@ -286,7 +286,7 @@
            <schema_name/>
            </partitioning>
     <connection>PROD-Redshift</connection>
-    <sql>-- this is run each month to get the student list used by finance to determine billing for Learnosity&#xa;Select f.subject, f.student_id, count&#x28;distinct f.assignment_id&#x29; as count_of_tests&#xa;from &#x24;&#x7b;schema-name&#x7d;.fact_student_sba_assessment f&#xa;join &#x24;&#x7b;schema-name&#x7d;.dim_student s on s.id &#x3d; f.student_academic_year_id&#xa;join &#x24;&#x7b;schema-name&#x7d;.dim_account a on a.id &#x3d; s.account_id&#xa;where f.start_date_id between &#x24;&#x7b;school-year-start-date&#x7d; and DATEADD&#x28;day, &#x24;&#x7b;day-offset&#x7d;, CURRENT_DATE&#x29;&#xa;and f.status &#x3c;&#x3e; &#x27;NOT_STARTED&#x27;&#xa;and a.account_type not in &#x28;8,9,10,11&#x29;&#xa;Group by f.student_id, f.subject&#xa;Order by f.student_id, f.subject&#x3b;</sql>
+    <sql>-- this is run each month to get the student list used by finance to determine billing for Learnosity&#xa;Select f.subject, f.student_id, count&#x28;distinct f.assignment_id&#x29; as count_of_tests&#xa;from &#x24;&#x7b;schema-name&#x7d;.fact_student_sba_assessment f&#xa;join &#x24;&#x7b;schema-name&#x7d;.dim_student s on s.id &#x3d; f.student_academic_year_id&#xa;join &#x24;&#x7b;schema-name&#x7d;.dim_account a on a.id &#x3d; s.account_id&#xa;where f.start_date_id between &#x27;&#x24;&#x7b;school-year-start-date&#x7d;&#x27; and DATEADD&#x28;day, &#x24;&#x7b;day-offset&#x7d;, CURRENT_DATE&#x29;&#xa;and f.status &#x3c;&#x3e; &#x27;NOT_STARTED&#x27;&#xa;and a.account_type not in &#x28;8,9,10,11&#x29;&#xa;Group by f.student_id, f.subject&#xa;Order by f.student_id, f.subject&#x3b;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -312,7 +312,7 @@
            <schema_name/>
            </partitioning>
     <connection>PROD-Redshift</connection>
-    <sql>-- this is run each month and used by finance to determine billing for Learnosity&#xa;select f.subject, count&#x28;distinct f.student_id&#x29;&#xa;from &#x24;&#x7b;schema-name&#x7d;.fact_student_sba_assessment f&#xa;join &#x24;&#x7b;schema-name&#x7d;.dim_student s on s.id &#x3d; f.student_academic_year_id&#xa;join &#x24;&#x7b;schema-name&#x7d;.dim_account a on a.id &#x3d; s.account_id&#xa;where f.start_date_id between &#x24;&#x7b;school-year-start-date&#x7d; and DATEADD&#x28;day, &#x24;&#x7b;day-offset&#x7d;, CURRENT_DATE&#x29;&#xa;and a.account_type not in &#x28;8,9,10,11&#x29;&#xa;group by f.subject&#xa;order by f.subject&#x3b;</sql>
+    <sql>-- this is run each month and used by finance to determine billing for Learnosity&#xa;select f.subject, count&#x28;distinct f.student_id&#x29;&#xa;from &#x24;&#x7b;schema-name&#x7d;.fact_student_sba_assessment f&#xa;join &#x24;&#x7b;schema-name&#x7d;.dim_student s on s.id &#x3d; f.student_academic_year_id&#xa;join &#x24;&#x7b;schema-name&#x7d;.dim_account a on a.id &#x3d; s.account_id&#xa;where f.start_date_id between &#x27;&#x24;&#x7b;school-year-start-date&#x7d;&#x27; and DATEADD&#x28;day, &#x24;&#x7b;day-offset&#x7d;, CURRENT_DATE&#x29;&#xa;and a.account_type not in &#x28;8,9,10,11&#x29;&#xa;group by f.subject&#xa;order by f.subject&#x3b;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
