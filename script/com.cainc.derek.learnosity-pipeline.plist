@@ -6,7 +6,7 @@
     <string>com.cainc.derek.learnosity-pipeline</string>
     <key>ProgramArguments</key>
     <array>
-        <string>/Users/ddorazio/dev/projects/derek-learnosity-pipeline/script/run_learnosity_pipeline.sh</string>
+        <string>/Users/ddorazio/dev/projects/github/personal/learnosity-pdi-pipeline/script/run_learnosity_pipeline.sh</string>
     </array>
     <key>StartCalendarInterval</key>
     <dict>
